@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;700&display=swap");
+
+:root {
+  --font-poppins: "Poppins", sans-serif;
+  --color-fondo: #f6f6ff;
+  --color-texto: #2d3952;
+  --color-parrafo: #606a86;
+  --color-error: #ff0000;
+  --color-blanco: #fff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--font-poppins);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* clases para js */
+.alerta__error {
+  margin-top: 2rem;
+  background-color: var(--color-blanco);
+  color: var(--color-error);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.alerta__error-bold {
+  font-weight: 700;
+}
+/* fin clases para js */
+
+.aplicacion {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aplicacion__contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aplicacion__formulario {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 2rem;
+}
+
+.aplicacion__input {
+  width: 17.5rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 0.125rem solid var(--color-parrafo);
+  outline: none;
+  transition: border-color 0.5s ease;
+}
+
+.aplicacion__input:focus {
+  border-color: var(--color-texto);
+}
+
+.aplicacion__btn {
+  width: 9.375rem;
+  border: 0.125rem solid var(--color-texto);
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.aplicacion__btn:hover {
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.aplicacion__equipo {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* clases para js */
+.aplicacion__equipo-contenedor {
+  display: flex;
+  gap: 1rem;
+}
+
+.aplicacion__equipo-contenedor img {
+  width: 80px;
+}
+
+.aplicacion__equipo-nombre {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.aplicacion__equipo-jugadores {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}

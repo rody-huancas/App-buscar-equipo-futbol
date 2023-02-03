@@ -123,10 +123,26 @@ body {
 }
 
 .aplicacion__equipo-jugadores {
-  margin-top: 2rem;
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   text-align: center;
+}
+
+.aplicacion__equipo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.aplicacion__equipo-card img {
+  width: 80px;
 }

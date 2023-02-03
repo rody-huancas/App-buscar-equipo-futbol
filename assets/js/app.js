@@ -1,4 +1,5 @@
 const formulario = document.querySelector("#formulario");
+const buscar = document.querySelector("#buscar");
 const aplicacion = document.querySelector("#aplicacion");
 const resultado = document.querySelector("#equipo");
 
@@ -10,6 +11,7 @@ function buscarEquipo(e) {
     e.preventDefault();
     const buscarInput = document.querySelector("#buscar").value;
     if (buscarInput === '') {
+        limpiarHTML()
         mostrarError("Debe ingresar el nombre de un equipo.");
         return;
     }
@@ -18,8 +20,8 @@ function buscarEquipo(e) {
 
 function consultarApi(equipo) {
     const key = "f279b10aa5050bd913eb8f8c24e128d2c005b00a55a27839b1ea77a040938a63";
-    const url = `https://apiv2.allsportsapi.com/football/?&met=Teams&teamName=${equipo}&APIkey=${key}`
-    console.log(url);
+    const url = `https://apiv2.allsportsapi.com/football/?&met=Teams&teamName=${equipo}&APIkey=${key}`;
+
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(datos => {
@@ -60,12 +62,28 @@ function mostrarEquipo(equipo) {
     const divJugadores = document.createElement("DIV");
     divJugadores.classList.add("aplicacion__equipo-jugadores");
     players.forEach(jugador => {
-        const { player_image, player_name, player_number, player_age } = jugador;
+        const divCard = document.createElement("DIV");
+        divCard.classList.add("aplicacion__equipo-card");
+
+        const { player_name, player_number, player_age } = jugador;
         // nombre del jugador
         const nombreJugador = document.createElement("P");
-        nombreJugador.textContent = player_name;
+        nombreJugador.innerHTML =
+            `<strong>Nombre: </strong>${player_name}`;
+        // nombre del jugador
+        const numeroJugador = document.createElement("P");
+        numeroJugador.innerHTML =
+            `<strong>N° de camiseta: </strong>${player_number}`;
+        // edad del jugador
+        const edadJugador = document.createElement("P");
+        edadJugador.innerHTML =
+            `<strong>Edad: </strong>${player_age}`;
         // agregar al divJugadores
-        divJugadores.appendChild(nombreJugador);
+        divCard.appendChild(edadJugador);
+        divCard.appendChild(nombreJugador);
+        divCard.appendChild(numeroJugador);
+        // agregar divCard a divJugadores
+        divJugadores.appendChild(divCard);
     });
     // agregar al divDatos
     divDatos.appendChild(nombreEquipo);
@@ -96,6 +114,6 @@ function mostrarError(mensaje) {
         aplicacion.appendChild(alerta);
         setTimeout(() => {
             alerta.remove();
-        }, 3000);
+        }, 5000);
     }
 }

@@ -43,6 +43,46 @@ body {
 .alerta__error-bold {
   font-weight: 700;
 }
+
+.aplicacion__equipo-contenedor {
+  display: flex;
+  gap: 1rem;
+}
+
+.aplicacion__equipo-contenedor img {
+  width: 80px;
+}
+
+.aplicacion__equipo-nombre {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.aplicacion__equipo-jugadores {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.aplicacion__equipo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.aplicacion__equipo-card img {
+  width: 80px;
+}
+
 /* fin clases para js */
 
 .aplicacion {
@@ -51,6 +91,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.aplicacion__titulo {
+  text-align: center;
 }
 
 .aplicacion__contenedor {
@@ -107,42 +151,29 @@ body {
   align-items: center;
   gap: 1rem;
 }
-/* clases para js */
-.aplicacion__equipo-contenedor {
-  display: flex;
-  gap: 1rem;
+
+@media (max-width: 975px) {
+  .aplicacion__equipo-jugadores {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.aplicacion__equipo-contenedor img {
-  width: 80px;
-}
+@media (max-width: 605px) {
+  .aplicacion__equipo-jugadores {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aplicacion__formulario {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.aplicacion__equipo-nombre {
-  font-weight: 700;
-  font-size: 2rem;
-}
+  .aplicacion__input {
+    width: 80%;
+  }
 
-.aplicacion__equipo-jugadores {
-  width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  text-align: center;
-}
-
-.aplicacion__equipo-card {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  background-color: var(--color-texto);
-  color: var(--color-fondo);
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-
-.aplicacion__equipo-card img {
-  width: 80px;
+  .aplicacion__btn {
+    width: 60%;
+    padding: 1rem 0;
+  }
 }

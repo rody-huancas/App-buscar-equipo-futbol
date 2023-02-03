@@ -15,7 +15,7 @@ function buscarEquipo(e) {
         mostrarError("Debe ingresar el nombre de un equipo.");
         return;
     }
-    consultarApi(buscarInput);
+    consultarApi(buscarInput.trim());
 }
 
 function consultarApi(equipo) {

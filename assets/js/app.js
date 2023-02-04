@@ -22,6 +22,9 @@ function consultarApi(equipo) {
     const key = "f279b10aa5050bd913eb8f8c24e128d2c005b00a55a27839b1ea77a040938a63";
     const url = `https://apiv2.allsportsapi.com/football/?&met=Teams&teamName=${equipo}&APIkey=${key}`;
 
+    // mostrar spinner de carga
+    spinner();
+
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(datos => {
@@ -116,4 +119,20 @@ function mostrarError(mensaje) {
             alerta.remove();
         }, 5000);
     }
+}
+
+function spinner() {
+    limpiarHTML()
+    const divSpinner = document.createElement("DIV");
+    divSpinner.classList.add("loader");
+    divSpinner.innerHTML = `
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+    `;
+    resultado.appendChild(divSpinner);
 }

@@ -1,5 +1,4 @@
 const formulario = document.querySelector("#formulario");
-const buscar = document.querySelector("#buscar");
 const aplicacion = document.querySelector("#aplicacion");
 const resultado = document.querySelector("#equipo");
 
